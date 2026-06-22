@@ -1,0 +1,154 @@
+<!--    
+    localhost:4200
+استAngular dev serverاین مربوط به  
+Angularیعنی اجرای درست پروژه     
+
+127.0.0.1:5500
+استLive Serverاین معمولاً مربوط به  
+عادیHTMLیعنی برای فایل‌های  
+
+:اصلیAngular appپس برای  
+
+localhost:4200 درست است
+127.0.0.1:5500/... نیست app روش درست اجرای  
+
+HTML normal file → can use Live Server
+Angular app → use ng serve
+
+src/app/app.html is not a standalone page
+it is only the template of a component
+-->
+
+<!--
+
+
+  ؟Angular dev serverیعنی چه
+
+
+
+
+Angular dev server = یک سرور محلیِ موقت برای توسعه
+
+
+یعنی وقتی این را می‌زنی
+
+
+ng serve
+
+
+ ببینیbrowserرا درappیک محیط اجرای محلی برای پروژه‌ات بالا می‌آورد تا بتوانی Angular    
+
+
+
+می‌گوییمserverچرا به آن  
+
+می‌دهدbrowserچون پروژه را از این آدرس به  :
+
+
+http://localhost:4200
+
+
+یعنی browser از آن آدرس فایل‌ها و خروجی build شده‌ی Angular را می‌گیرد.
+
+
+
+چرا dev server
+
+چون برای **development** است، نه نسخه‌ی نهایی deployment.
+
+یعنی کارش این‌هاست:
+
+* پروژه را build کند
+* تغییرات فایل‌ها را watch کند
+* بعد از save شدن، صفحه را update کند
+* برای تست و یادگیری سریع استفاده شود
+
+
+
+## فرقش با Live Server چیست؟
+
+### Live Server
+
+بیشتر برای فایل‌های ساده مثل:
+
+* `index.html`
+* `style.css`
+* `script.js`
+
+است
+
+### Angular dev server
+
+برای **پروژه Angular** است، چون Angular فقط فایل خام HTML نیست؛
+باید:
+
+* TS را پردازش کند
+* componentها را assemble کند
+* project structure را build کند
+
+
+
+## localhost یعنی چه؟
+
+localhost = همین کامپیوتر خودت
+
+
+پس:
+
+
+localhost:4200
+
+
+یعنی:
+
+* روی سیستم خودت
+* روی port 4200
+* Angular dev server در حال اجراست
+
+
+
+## چرا هر بار بعد از خاموش کردن لپ‌تاپ باید دوباره `ng serve` بزنی؟
+
+چون این server موقتی است.
+
+یعنی:
+
+* با shutdown می‌خوابد
+* با بستن terminal قطع می‌شود
+* دوباره باید روشنش کنی
+
+
+
+## یک تشبیه ساده
+
+فرض کن Angular dev server مثل یک آشپز موقت است که:
+
+* مواد خام پروژه را می‌گیرد
+* آن‌ها را آماده می‌کند
+* و نتیجه را روی `localhost:4200` به تو تحویل می‌دهد
+
+اگر آشپز را خاموش کنی، دیگر چیزی سرو نمی‌شود.
+
+
+
+
+ng serve
+→ starts Angular dev server
+→ serves your Angular app on localhost:4200
+→ rebuilds when files change
+
+Angular dev server is the local temporary server that runs and updates your Angular app during development.
+
+
+
+
+
+-->
+
+
+
+
+
+
+<h1>Hello Angular</h1>
+<p>This is my first component</p>

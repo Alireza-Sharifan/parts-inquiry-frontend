@@ -1,0 +1,22 @@
+input{
+    padding: 6px;
+  margin-right: 10px;
+}
+button{
+      padding: 6px 14px;
+}
+.listBox{
+     margin-top: 20px;
+  padding: 14px;
+  border: 1px solid gray;
+  width: 320px;
+}
+.error{
+    color: red;
+  margin-top: 12px;
+}
+
+.success{
+      color: green;
+  font-weight: bold;
+}

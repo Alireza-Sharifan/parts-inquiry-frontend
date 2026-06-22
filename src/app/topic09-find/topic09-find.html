@@ -1,0 +1,31 @@
+<label for="partCode">Part Code: </label>
+<input #partCode type="text" placeholder="Enter part code like P102">
+<button (click)="findPart(partCode.value)">Find Part</button>
+@if (requiredError) {
+    <p class="error">No part was found for this code.</p>
+}
+
+@if (selectPart) {
+    <div class="listBox">
+        <h2>{{selectPart.name}}</h2>
+        <p>{{selectPart.category}}</p>
+        <p>{{selectPart.material}}</p>
+        <p>{{selectPart.stock}}</p>
+
+         @if (selectPart.stock>0) {
+        <p class="success">Status: Available</p>
+    }
+    @if (selectPart.stock===0) {
+        <p class="error">Status: Out of stock</p>
+    }
+    </div>
+   
+}
+
+<h3>Example codes</h3>
+
+<ul>
+  @for (item of partsData.parts; track item.code) {
+    <li>{{ item.code }} - {{ item.name }}</li>
+  }
+</ul>

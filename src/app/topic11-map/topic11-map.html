@@ -1,0 +1,15 @@
+<ul>
+  @for (item of displayParts; track item.code) {
+    <li class="card">
+      <strong>{{ item.fullTitle }}</strong><br>
+      Technical Info: {{ item.technicalInfo }}<br>
+      Inventory: {{ item.stockText }}<br>
+      Price: {{ item.priceText }}
+@if (item.reorderNeeded) {
+       <p>Discount Price: ${{item.discountPrice}}</p>
+        <p class="warning">Reorder suggested for purchasing team.</p>
+      }
+      
+    </li>
+  }
+</ul>

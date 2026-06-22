@@ -1,0 +1,67 @@
+
+<!--<h1>{{greeting}}</h1>
+<p>{{text}}</p>-->
+
+
+
+
+ <!--<h1>{{title}}</h1>
+ <p>{{text}}</p>
+<button [disabled]="isDisabled">Save</button>
+-->
+
+
+
+
+<!--<p>{{text}}</p>
+<button (click)="textChange()">Click me!</button>-->
+
+
+<!-- #username template reference variable --> 
+
+<!-- <label for="username">Name: </label>
+<input #username type="text" placeholder="Enter your name">
+<button (click)="showResult(username.value)">Show Result</button>
+<p>{{text}}</p>   -->
+
+<!--<label for="username">Name: </label>
+<input #username type="text" placeholder="Enter your name">
+<button (click)="showResult(username.value,username.placeholder)">Show Result</button>
+<p>{{text}}</p>
+-->
+<!--<label for="username">Name: </label>
+<input #username type="text" placeholder="Enter your name">
+<button (click)="showResult(username.value,username.placeholder)">Show Name</button>
+<p>{{text}}</p>
+-->
+
+<!--<label for="username">Name: </label>
+<input #username type="text" placeholder="Enter your name">
+<br>
+<label for="phone">Phone Number: </label>
+<input #phone type="text" placeholder="Enter your phone number"><br>
+
+<button (click)="Submission(username.value,phone.value)">Submit</button>
+<p>{{text}}</p>-->
+
+<label for="username">Name: </label>
+<input #username type="text" placeholder="Enter your name">
+<br>
+<!--<label for="phone">Phone: </label>-->
+
+<!--<input #phone type="text" placeholder="Enter your phone number">-->
+<!-- <input id="phone" #phone type="text" placeholder="Enter your phone number"> -->
+
+<div class="phone-row">
+    
+<label for="phone">Phone: </label>
+<input id="phone" #phone type="text" placeholder="Enter your phone number">
+
+</div>
+<br>
+<button (click)="showResult(username.value,phone.value)">Submit</button>
+<p>{{text}}</p>
+
+<!--<button [disabled]="isDisabled" (click)="textChange()">Click me!</button>
+-->
+

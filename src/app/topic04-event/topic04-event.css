@@ -1,0 +1,22 @@
+h1 {
+  color: darkblue;
+}
+
+input {
+  padding: 6px;
+  width: 500px;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+p {
+  margin-top: 15px;
+  color: green;
+}
+
+div{
+    margin-top: 40px;
+}

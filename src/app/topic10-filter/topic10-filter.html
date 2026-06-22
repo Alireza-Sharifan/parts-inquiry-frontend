@@ -1,0 +1,18 @@
+<div class="buttons" >
+    <button (click)="showAllParts()">All Parts</button>
+    <button (click)="showAvailableParts()">Available Parts</button>
+<button (click)="showBrakingParts()">Braking Parts</button>
+<button (click)="showOutOfStockParts()">Out of Stock</button>
+</div>
+<h1>Filtered Part List</h1>
+<ul>
+   @for (item of filterParts; track item)
+    {
+<li>
+    Code: {{item.code}} - Name: {{item.name}} - Category: {{item.category}} - Material: {{item.material}} - Stock: {{item.stock}}
+</li>
+   }
+</ul>
+
+<!--""+item.code+""+item.name+""+item.category+""+item.material+""+item.stock
+-->

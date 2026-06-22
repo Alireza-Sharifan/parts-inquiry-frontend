@@ -1,0 +1,12 @@
+.card {
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid gray;
+  width: 360px;
+}
+
+.warning {
+  color: darkorange;
+  font-weight: bold;
+  margin-top: 8px;
+}

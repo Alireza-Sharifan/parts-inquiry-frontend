@@ -1,0 +1,55 @@
+h2 {
+  margin-bottom: 15px;
+}
+
+.block {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid gray;
+}
+
+input {
+  margin-left: 10px;
+  padding: 6px;
+}
+
+button {
+  padding: 6px 12px;
+  margin-top: 10px;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid gray;
+  width: 380px;
+  list-style: none;
+}
+
+.loading {
+  color: darkorange;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.warning {
+  color: orange;
+  font-weight: bold;
+}
+
+.info {
+  color: darkblue;
+  font-weight: bold;
+}

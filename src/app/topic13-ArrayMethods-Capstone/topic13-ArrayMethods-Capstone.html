@@ -1,0 +1,63 @@
+<h1>Mini Capstone: Combined Array Methods Demo</h1>
+
+<div class="buttons">
+  <button (click)="showAllParts()">All Parts</button>
+  <button (click)="showAvailableParts()">Available Parts</button>
+  <button (click)="showBrakingParts()">Braking Parts</button>
+  <button (click)="showLowStockParts()">Low Stock Parts</button>
+</div>
+
+<h2>Current View: {{ currentViewTitle }}</h2>
+
+<div class="search-box">
+  <label for="partCode">Find Part Code in Current View: </label>
+  <input #partCode type="text" placeholder="Example: P101">
+  <button (click)="findPart(partCode.value)">Find Part</button>
+</div>
+
+@if (requiredError) {
+  <p class="error">Part code is required.</p>
+}
+
+@if (notFound) {
+  <p class="error">No part was found in the current view.</p>
+}
+
+@if (selectedPart) {
+  <div class="card selected-card">
+    <h3>Selected Part Details</h3>
+    <p>Code: {{ selectedPart.code }}</p>
+    <p>Name: {{ selectedPart.name }}</p>
+    <p>Category: {{ selectedPart.category }}</p>
+    <p>Material: {{ selectedPart.material }}</p>
+    <p>Stock: {{ selectedPart.stock }}</p>
+    <p>Price: ${{ selectedPart.price }}</p>
+  </div>
+}
+
+<h2>Visible Parts Summary</h2>
+
+<div class="card summary-card">
+  <p>Total Products: {{ summary.totalProducts }}</p>
+  <p>Total Stock Quantity: {{ summary.totalStock }}</p>
+  <p>Total Inventory Value: ${{ summary.totalInventoryValue }}</p>
+  <p>Low Stock Parts: {{ summary.lowStockCount }}</p>
+  <p>Out of Stock Parts: {{ summary.outOfStockCount }}</p>
+</div>
+
+<h2>Visible Parts List</h2>
+
+<ul>
+  @for (item of displayParts; track item.code) {
+    <li class="card">
+      <strong>{{ item.fullTitle }}</strong><br>
+      {{ item.technicalInfo }}<br>
+      {{ item.stockText }}<br>
+      {{ item.priceText }}
+
+      @if (item.reorderNeeded) {
+        <p class="warning">Reorder suggested for purchasing team.</p>
+      }
+    </li>
+  }
+</ul>

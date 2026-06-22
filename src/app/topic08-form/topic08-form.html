@@ -1,0 +1,40 @@
+<label for="username">Name: </label>
+<input #username type="text" placeholder="Enter your name">
+<hr>
+<label for="phone">Phone Number: </label>
+<input #phone type="text" placeholder="Enter your phone number">
+<hr>
+<button (click)="submitForm(username.value,phone.value)">Submit</button>
+
+@if (requiredError) {
+    <p>Both name and phone must be entered!</p>
+    <p class="error">All required fields must be completed.</p>
+}
+
+@if (nameError) {
+    <p>Only letter!</p>
+         <p class="error">Name must not contain numbers.</p>
+}
+
+@if (phoneError) {
+    <p>Only number!</p>
+    <p class="error">Name must not contain numbers.</p>
+
+}
+
+
+
+@if (success) {
+    <p>Your data submitted successfully.</p>
+    <p class="success">Form submitted successfully.</p>
+}
+
+
+
+
+
+
+<!--@if (nameError && phoneError) {
+        <p>Only letter!</p>
+    <p>Only number!</p>
+}-->

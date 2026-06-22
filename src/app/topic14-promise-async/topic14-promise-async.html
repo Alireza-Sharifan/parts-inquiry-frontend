@@ -1,0 +1,32 @@
+
+
+<label for="partCode">Part Code: </label>
+<input #partCode type="text" placeholder="Enter part code">
+
+<button (click)="checkPart(partCode.value)">Check Part</button>
+
+@if (requiredError) {
+  <p class="error">Part code is required.</p>
+}
+
+@if (loading) {
+  <p class="loading">Checking part data...</p>
+}
+
+@if (notFound) {
+  <p class="error">Part not found.</p>
+}
+
+@if (selectedPart) {
+  <div class="card">
+    <p><strong>Code:</strong> {{ selectedPart.code }}</p>
+    <p><strong>Name:</strong> {{ selectedPart.name }}</p>
+    <p><strong>Category:</strong> {{ selectedPart.category }}</p>
+    <p><strong>Stock:</strong> {{ selectedPart.stock }}</p>
+    <p><strong>Price:</strong> ${{ selectedPart.price }}</p>
+
+    @if (selectedPart.stock === 0) {
+      <p class="warning">This part is out of stock.</p>
+    }
+  </div>
+}

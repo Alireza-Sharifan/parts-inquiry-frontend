@@ -1,0 +1,105 @@
+<!--<button (click)="onClick()">Login</button>
+@if (isClicked) {
+    <p>You ar logged in!</p>
+}-->
+<!--<label for="username">Name: </label>
+<input #username type="text" placeholder="Enter your name">
+<br>
+<label for="phone">Phone Number: </label>
+<input #phone type="text" placeholder="Enter your phone number"><br>
+<button (click)="submitForm(username.value, phone.value)">Login</button>
+
+@if (bothEmpty) {
+    <p>Both fields have to be filled!</p>
+}
+
+@if (nameEmpty) {
+    <p>Name is needed!</p>
+}
+@if (numberEmpty) {
+    <p>Phone number is needed!</p>
+}
+@if (success) {
+    <p>successful Submission</p>
+}-->
+
+<!--<input #username type="text" (input)="checkName(username.value)">
+@if (nameEntered) {
+    <p>Name entered successfully!</p>
+}-->
+
+
+<!--<input #username type="text" (input)="checkName(username.value)">
+@if (canSubmit) {
+    <button>Submit</button>
+}-->
+  <!--  <label for="username">Name: </label>
+<input #username type="text"><br>
+
+<label for="phone">Phone Number: </label>
+<input #phone type="text"><br>
+<button (click)="submitForm(username.value, phone.value)">Submit</button>
+
+@if (requiredError) {
+  <p>All required fields must be completed.</p>
+}
+
+@if (nameError) {
+  <p>Name must not contain numbers.</p>
+}
+
+@if (phoneError) {
+  <p>Phone number must contain digits only.</p>
+}-->
+
+
+
+
+<!--<button (click)="toggleLogin()">Toggle Login</button>
+
+@if (isLoggedIn) {
+<p class="success">You are logged in.</p>
+  // <p id="success">You are logged in.</p>
+}
+
+@if (!isLoggedIn) {
+<p class="warning">You are not logged in.</p>
+  <p id="warning">You are not logged in.</p>
+}
+
+
+
+@for (item of services; track item) {
+    <p>{{item}}</p>
+}-->
+
+
+
+<!--
+For real list-like data, ul/li is usually cleaner 
+and more appropriate than repeated p tags.
+-->
+
+
+
+
+
+
+
+
+@for (item of services; track item) {
+    <ul> <li>{{item}}</li></ul>
+  
+}
+
+
+
+
+
+<!--@if (isloggedIn) {
+    <button (click)="toggleLogin()">Logout</button>
+}
+
+@if (!isloggedIn) {
+    <button (click)="toggleLogin()">Login</button>
+}-->

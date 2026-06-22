@@ -1,0 +1,25 @@
+<div class="border">
+    <p>Total Products: {{summary.totalProducts}}</p>
+    <p>Total Stock Quantity: {{summary.totalStock}}</p>
+    <p>Total Inventory Value: ${{summary.totalInventoryValue}}</p>
+    <p>Low Stock Parts: {{summary.lowStockCount}}</p>
+    <p>Out of Stock Parts: {{summary.outOfStockCount}}</p>
+    <p>The Most Expensive: {{summary.theMostExpensive}}</p>
+    <p>The Cheapest: {{summary.theCheapest}}</p>
+
+    <h2>Grouped by Category</h2>
+
+@for (group of summary.categoryGroups | keyvalue; track group.key) {
+  <div class="card">
+    <h3>{{ group.key }}</h3>
+
+    <ul>
+      @for (part of group.value; track part.code) {
+        <li>
+          {{ part.code }} - {{ part.name }} - Stock: {{ part.stock }} - Price: ${{ part.price }}
+        </li>
+      }
+    </ul>
+  </div>
+}
+</div>

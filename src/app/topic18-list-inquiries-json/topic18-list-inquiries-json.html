@@ -1,0 +1,34 @@
+
+
+<button (click)="loadInquiries()">Load Inquiries</button>
+
+@if (loading) {
+  <p class="loading">Loading inquiries from server...</p>
+}
+
+@if (serverError) {
+  <p class="error">Server error. Please try again.</p>
+}
+
+@if (!loading && !serverError && inquiries.length === 0) {
+  <p>No inquiries found.</p>
+}
+
+@if (inquiries.length > 0) {
+  <h2>Submitted Inquiries</h2>
+
+  <ul>
+    @for (item of inquiries; track item.id) {
+      <li class="card">
+        <p><strong>Inquiry ID:</strong> {{ item.id }}</p>
+        <p><strong>Customer Name:</strong> {{ item.customerName }}</p>
+        <p><strong>Part Code:</strong> {{ item.partCode }}</p>
+        <p><strong>Part Name:</strong> {{ item.partName }}</p>
+
+        @if (item.outOfStock) {
+          <p class="warning">This requested part is out of stock.</p>
+        }
+      </li>
+    }
+  </ul>
+}

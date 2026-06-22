@@ -1,0 +1,40 @@
+<label for="customerName">Customer Name: </label>
+<input #customerName type="text" placeholder="Enter your name">
+
+<br><br>
+
+<label for="partCode">Part Code: </label>
+<input #partCode type="text" placeholder="Enter part code like P101">
+
+<br><br>
+
+<button (click)="submitInquiry(customerName.value, partCode.value)">Submit Inquiry</button>
+
+@if (loading) {
+  <p class="loading">Submitting inquiry to server...</p>
+}
+
+@if (validationError) {
+  <p class="error">{{ validationError }}</p>
+}
+
+@if (serverError) {
+  <p class="error">Server error. Please try again.</p>
+}
+
+@if (successMessage) {
+  <p class="success">{{ successMessage }}</p>
+}
+
+@if (submittedInquiry) {
+  <div class="card">
+    <p><strong>Inquiry ID:</strong> {{ submittedInquiry.id }}</p>
+    <p><strong>Customer Name:</strong> {{ submittedInquiry.customerName }}</p>
+    <p><strong>Part Code:</strong> {{ submittedInquiry.partCode }}</p>
+    <p><strong>Part Name:</strong> {{ submittedInquiry.partName }}</p>
+
+    @if (submittedInquiry.outOfStock) {
+      <p class="warning">This requested part is currently out of stock.</p>
+    }
+  </div>
+}

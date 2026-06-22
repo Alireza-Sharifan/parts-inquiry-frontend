@@ -1,0 +1,23 @@
+nav{
+    display: flex;
+gap: 20px;
+    margin-bottom: 10px;
+}
+.green{
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+.blue{
+    color:blue;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+.red{
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
