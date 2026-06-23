@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 //import { Topic01Component } from './topic01-component/topic01-component';
 //import { Topic02Template } from './topic02-template/topic02-template';
 //import { Topic03Binding } from './topic03-binding/topic03-binding';
@@ -67,6 +67,16 @@ imports:[Topic21FinalIntegratedApp ],
 //template:`<app-topic20-1-internet-get-part-check></app-topic20-1-internet-get-part-check>`
 template:`<app-topic21-final-integrated-app></app-topic21-final-integrated-app>`
 
+})
+export class App {
+}*/
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  template: `<router-outlet></router-outlet>`
 })
 export class App {
 }

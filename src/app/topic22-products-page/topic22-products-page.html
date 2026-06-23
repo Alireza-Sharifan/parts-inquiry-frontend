@@ -1,0 +1,149 @@
+<h2>Products</h2>
+
+<p>This page allows you to check part information, submit an inquiry, and view saved inquiries.</p>
+
+<section class="block">
+  <h2>1) Check Part</h2>
+
+  <label for="partCodeCheck">Part Code: </label>
+  <input #partCodeCheck type="text" placeholder="Enter part code like P101" />
+
+  <button (click)="checkPart(partCodeCheck.value)">Check Part</button>
+
+  @if (checkRequiredError) {
+    <p class="error">Part code is required.</p>
+  }
+
+  @if (checkLoading) {
+    <p class="loading">Checking part data from internet backend...</p>
+  }
+
+  @if (checkNotFound) {
+    <p class="error">Part not found.</p>
+  }
+
+  @if (checkServerError) {
+    <p class="error">Server error. Please try again.</p>
+  }
+
+  @if (selectedPart) {
+    <div class="card">
+      <p><strong>Code:</strong> {{ selectedPart.code }}</p>
+      <p><strong>Name:</strong> {{ selectedPart.name }}</p>
+      <p><strong>Category:</strong> {{ selectedPart.category }}</p>
+      <p><strong>Stock:</strong> {{ selectedPart.stock }}</p>
+      <p><strong>Price:</strong> ${{ selectedPart.price }}</p>
+
+      @if (getProductImage(selectedPart.code); as imagePath) {
+        <img
+          class="product-image"
+          [src]="imagePath"
+          [alt]="selectedPart.name" />
+      }
+
+      @if (selectedPart.stock === 0) {
+        <p class="warning">This part is out of stock.</p>
+      }
+    </div>
+  }
+</section>
+
+<section class="block">
+  <h2>2) Submit Inquiry</h2>
+
+  <label for="customerName">Customer Name: </label>
+  <input #customerName type="text" placeholder="Enter your name" />
+
+  <br /><br />
+
+  <label for="partCodeSubmit">Part Code: </label>
+  <input #partCodeSubmit type="text" placeholder="Enter part code like P101" />
+
+  <br /><br />
+
+  <button (click)="submitInquiry(customerName.value, partCodeSubmit.value)">
+    Submit Inquiry
+  </button>
+
+  @if (submitLoading) {
+    <p class="loading">Submitting inquiry to internet backend...</p>
+  }
+
+  @if (submitValidationError) {
+    <p class="error">{{ submitValidationError }}</p>
+  }
+
+  @if (submitServerError) {
+    <p class="error">Server error. Please try again.</p>
+  }
+
+  @if (submitSuccessMessage) {
+    <p class="success">{{ submitSuccessMessage }}</p>
+  }
+
+  @if (submittedInquiry) {
+    <div class="card">
+      <p><strong>Inquiry ID:</strong> {{ submittedInquiry.id }}</p>
+      <p><strong>Customer Name:</strong> {{ submittedInquiry.customerName }}</p>
+      <p><strong>Part Code:</strong> {{ submittedInquiry.partCode }}</p>
+      <p><strong>Part Name:</strong> {{ submittedInquiry.partName }}</p>
+
+      @if (getProductImage(submittedInquiry.partCode); as imagePath) {
+        <img
+          class="product-image"
+          [src]="imagePath"
+          [alt]="submittedInquiry.partName" />
+      }
+
+      @if (submittedInquiry.outOfStock) {
+        <p class="warning">This requested part is currently out of stock.</p>
+      }
+    </div>
+  }
+</section>
+
+<section class="block">
+  <h2>3) Inquiry List</h2>
+
+  <!-- Manual mode -->
+  <button (click)="loadInquiries()">Load Inquiries</button>
+
+  <!-- Auto-load mode -->
+  <!-- <p class="info">Auto-load mode is active.</p> -->
+
+  @if (listLoading) {
+    <p class="loading">Loading inquiries from internet backend...</p>
+  }
+
+  @if (listServerError) {
+    <p class="error">Server error. Please try again.</p>
+  }
+
+  @if (!listLoading && !listServerError && inquiries.length === 0) {
+    <p>No inquiries found.</p>
+  }
+
+  @if (inquiries.length > 0) {
+    <ul>
+      @for (item of inquiries; track item.id) {
+        <li class="card">
+          <p><strong>Inquiry ID:</strong> {{ item.id }}</p>
+          <p><strong>Customer Name:</strong> {{ item.customerName }}</p>
+          <p><strong>Part Code:</strong> {{ item.partCode }}</p>
+          <p><strong>Part Name:</strong> {{ item.partName }}</p>
+
+          @if (getProductImage(item.partCode); as imagePath) {
+            <img
+              class="product-image"
+              [src]="imagePath"
+              [alt]="item.partName" />
+          }
+
+          @if (item.outOfStock) {
+            <p class="warning">This requested part is out of stock.</p>
+          }
+        </li>
+      }
+    </ul>
+  }
+</section>

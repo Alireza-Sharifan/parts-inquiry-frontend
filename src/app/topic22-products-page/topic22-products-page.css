@@ -1,0 +1,64 @@
+h2 {
+  margin-bottom: 15px;
+}
+
+.block {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid lightgray;
+}
+
+input {
+  margin-left: 10px;
+  padding: 6px;
+}
+
+button {
+  padding: 6px 12px;
+  margin-top: 10px;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid gray;
+  width: 420px;
+  list-style: none;
+}
+
+.product-image {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid gray;
+  margin-top: 14px;
+  display: block;
+}
+
+.loading {
+  color: orange;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.warning {
+  color: orange;
+  font-weight: bold;
+}
+
+.info {
+  color: darkblue;
+  font-weight: bold;
+}
