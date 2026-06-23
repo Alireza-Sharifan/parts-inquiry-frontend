@@ -22,17 +22,29 @@ button {
   margin-top: 20px;
   padding: 12px;
   border: 1px solid gray;
-  width: 420px;
+  width: 520px;
   list-style: none;
 }
 
+.card-with-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.card-text {
+  flex: 1;
+}
+
 .product-image {
-  width: 220px;
-  height: 150px;
+  width: 180px;
+  height: 130px;
   object-fit: cover;
   border: 1px solid gray;
-  margin-top: 14px;
   display: block;
+  flex-shrink: 0;
+  margin-top: 0;
 }
 
 .loading {

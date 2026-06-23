@@ -27,22 +27,24 @@
   }
 
   @if (selectedPart) {
-    <div class="card">
-      <p><strong>Code:</strong> {{ selectedPart.code }}</p>
-      <p><strong>Name:</strong> {{ selectedPart.name }}</p>
-      <p><strong>Category:</strong> {{ selectedPart.category }}</p>
-      <p><strong>Stock:</strong> {{ selectedPart.stock }}</p>
-      <p><strong>Price:</strong> ${{ selectedPart.price }}</p>
+    <div class="card card-with-image">
+      <div class="card-text">
+        <p><strong>Code:</strong> {{ selectedPart.code }}</p>
+        <p><strong>Name:</strong> {{ selectedPart.name }}</p>
+        <p><strong>Category:</strong> {{ selectedPart.category }}</p>
+        <p><strong>Stock:</strong> {{ selectedPart.stock }}</p>
+        <p><strong>Price:</strong> ${{ selectedPart.price }}</p>
+
+        @if (selectedPart.stock === 0) {
+          <p class="warning">This part is out of stock.</p>
+        }
+      </div>
 
       @if (getProductImage(selectedPart.code); as imagePath) {
         <img
           class="product-image"
           [src]="imagePath"
           [alt]="selectedPart.name" />
-      }
-
-      @if (selectedPart.stock === 0) {
-        <p class="warning">This part is out of stock.</p>
       }
     </div>
   }
@@ -82,21 +84,23 @@
   }
 
   @if (submittedInquiry) {
-    <div class="card">
-      <p><strong>Inquiry ID:</strong> {{ submittedInquiry.id }}</p>
-      <p><strong>Customer Name:</strong> {{ submittedInquiry.customerName }}</p>
-      <p><strong>Part Code:</strong> {{ submittedInquiry.partCode }}</p>
-      <p><strong>Part Name:</strong> {{ submittedInquiry.partName }}</p>
+    <div class="card card-with-image">
+      <div class="card-text">
+        <p><strong>Inquiry ID:</strong> {{ submittedInquiry.id }}</p>
+        <p><strong>Customer Name:</strong> {{ submittedInquiry.customerName }}</p>
+        <p><strong>Part Code:</strong> {{ submittedInquiry.partCode }}</p>
+        <p><strong>Part Name:</strong> {{ submittedInquiry.partName }}</p>
+
+        @if (submittedInquiry.outOfStock) {
+          <p class="warning">This requested part is currently out of stock.</p>
+        }
+      </div>
 
       @if (getProductImage(submittedInquiry.partCode); as imagePath) {
         <img
           class="product-image"
           [src]="imagePath"
           [alt]="submittedInquiry.partName" />
-      }
-
-      @if (submittedInquiry.outOfStock) {
-        <p class="warning">This requested part is currently out of stock.</p>
       }
     </div>
   }
@@ -126,21 +130,23 @@
   @if (inquiries.length > 0) {
     <ul>
       @for (item of inquiries; track item.id) {
-        <li class="card">
-          <p><strong>Inquiry ID:</strong> {{ item.id }}</p>
-          <p><strong>Customer Name:</strong> {{ item.customerName }}</p>
-          <p><strong>Part Code:</strong> {{ item.partCode }}</p>
-          <p><strong>Part Name:</strong> {{ item.partName }}</p>
+        <li class="card card-with-image">
+          <div class="card-text">
+            <p><strong>Inquiry ID:</strong> {{ item.id }}</p>
+            <p><strong>Customer Name:</strong> {{ item.customerName }}</p>
+            <p><strong>Part Code:</strong> {{ item.partCode }}</p>
+            <p><strong>Part Name:</strong> {{ item.partName }}</p>
+
+            @if (item.outOfStock) {
+              <p class="warning">This requested part is out of stock.</p>
+            }
+          </div>
 
           @if (getProductImage(item.partCode); as imagePath) {
             <img
               class="product-image"
               [src]="imagePath"
               [alt]="item.partName" />
-          }
-
-          @if (item.outOfStock) {
-            <p class="warning">This requested part is out of stock.</p>
           }
         </li>
       }
