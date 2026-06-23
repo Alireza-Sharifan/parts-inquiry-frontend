@@ -65,11 +65,12 @@ imports:[Topic21FinalIntegratedApp ],
 //template:`<app-topic18-list-inquiries-json></app-topic18-list-inquiries-json>`
 //template:`<app-topic19-auto-load-inquiries></app-topic19-auto-load-inquiries>`
 //template:`<app-topic20-1-internet-get-part-check></app-topic20-1-internet-get-part-check>`
-//template:`<app-topic21-final-integrated-app></app-topic21-final-integrated-app>`
+template:`<app-topic21-final-integrated-app></app-topic21-final-integrated-app>`
 
 })
 export class App {
 }*/
+
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
